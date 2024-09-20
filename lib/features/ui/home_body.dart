@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gemini_chat_bot/features/logic/cubit/chat_cubit.dart';
 import 'package:gemini_chat_bot/features/ui/home_text_form_field.dart';
 
 class HomeBody extends StatelessWidget {
@@ -10,8 +12,12 @@ class HomeBody extends StatelessWidget {
       children: [
         Expanded(child: ListView()),
         HomeTextFormField(
-          hintText: 'Say Something',
-          validator: (value) {},
+          controller: context.read<ChatCubit>().textEditingController,
+          onChanged: (value) {
+            if (context.read<ChatCubit>().chatMessagesList.isEmpty) {
+              context.read<ChatCubit>().isTyping = true;
+            }
+          },
         )
       ],
     );

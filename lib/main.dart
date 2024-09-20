@@ -4,7 +4,12 @@ import 'package:gemini_chat_bot/core/helpers/constants.dart';
 import 'package:gemini_chat_bot/core/routes/app_router.dart';
 import 'package:gemini_chat_bot/gemini_chat_bot.dart';
 
+import 'core/di/dependency_injection.dart';
+
 void main() {
-   Gemini.init(apiKey:Constants.geminiApiKey);
-  runApp( GeminiChatBot(appRouter: AppRouter(),));
+  setupGetIt();
+  Gemini.init(apiKey: Constants.geminiApiKey);
+  runApp(GeminiChatBot(
+    appRouter: AppRouter(),
+  ));
 }

@@ -1,25 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../core/theme/colors.dart';
 import '../../core/theme/styles.dart';
 
 class HomeTextFormField extends StatelessWidget {
-  final String hintText;
-
-  final TextEditingController? controller;
-  final Function(String?) validator;
+  final TextEditingController controller;
+  final void Function(String)? onChanged;
   const HomeTextFormField({
     super.key,
-    required this.hintText,
-    this.controller,
-    required this.validator,
+    required this.controller,
+    this.onChanged,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      onChanged: onChanged,
       decoration: InputDecoration(
         isDense: true,
         contentPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 28.h),
@@ -60,7 +57,7 @@ class HomeTextFormField extends StatelessWidget {
               topRight: Radius.circular(40.sp)),
         ),
         hintStyle: TextStyles.font20GrayWeight200,
-        hintText: hintText,
+        hintText: 'Ask Gemini',
         suffixIcon: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.end,
@@ -88,9 +85,6 @@ class HomeTextFormField extends StatelessWidget {
       ),
       cursorColor: Colors.white,
       style: TextStyles.font20WhiteWeight400,
-      validator: (value) {
-        return validator(value);
-      },
     );
   }
 }

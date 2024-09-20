@@ -20,7 +20,9 @@ mixin _$ChatState<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function() sending,
+    required TResult Function() typing,
+    required TResult Function(T data) send,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +30,9 @@ mixin _$ChatState<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function()? sending,
+    TResult? Function()? typing,
+    TResult? Function(T data)? send,
     TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +40,9 @@ mixin _$ChatState<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function()? sending,
+    TResult Function()? typing,
+    TResult Function(T data)? send,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -45,7 +51,9 @@ mixin _$ChatState<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(Loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
+    required TResult Function(Sending<T> value) sending,
+    required TResult Function(Typing<T> value) typing,
+    required TResult Function(Send<T> value) send,
     required TResult Function(Error<T> value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -53,7 +61,9 @@ mixin _$ChatState<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
+    TResult? Function(Sending<T> value)? sending,
+    TResult? Function(Typing<T> value)? typing,
+    TResult? Function(Send<T> value)? send,
     TResult? Function(Error<T> value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +71,9 @@ mixin _$ChatState<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
     TResult Function(Loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
+    TResult Function(Sending<T> value)? sending,
+    TResult Function(Typing<T> value)? typing,
+    TResult Function(Send<T> value)? send,
     TResult Function(Error<T> value)? error,
     required TResult orElse(),
   }) =>
@@ -132,7 +144,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function() sending,
+    required TResult Function() typing,
+    required TResult Function(T data) send,
     required TResult Function(String error) error,
   }) {
     return initial();
@@ -143,7 +157,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function()? sending,
+    TResult? Function()? typing,
+    TResult? Function(T data)? send,
     TResult? Function(String error)? error,
   }) {
     return initial?.call();
@@ -154,7 +170,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function()? sending,
+    TResult Function()? typing,
+    TResult Function(T data)? send,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -169,7 +187,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(Loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
+    required TResult Function(Sending<T> value) sending,
+    required TResult Function(Typing<T> value) typing,
+    required TResult Function(Send<T> value) send,
     required TResult Function(Error<T> value) error,
   }) {
     return initial(this);
@@ -180,7 +200,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
+    TResult? Function(Sending<T> value)? sending,
+    TResult? Function(Typing<T> value)? typing,
+    TResult? Function(Send<T> value)? send,
     TResult? Function(Error<T> value)? error,
   }) {
     return initial?.call(this);
@@ -191,7 +213,9 @@ class _$InitialImpl<T> implements _Initial<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
     TResult Function(Loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
+    TResult Function(Sending<T> value)? sending,
+    TResult Function(Typing<T> value)? typing,
+    TResult Function(Send<T> value)? send,
     TResult Function(Error<T> value)? error,
     required TResult orElse(),
   }) {
@@ -249,7 +273,9 @@ class _$LoadingImpl<T> implements Loading<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function() sending,
+    required TResult Function() typing,
+    required TResult Function(T data) send,
     required TResult Function(String error) error,
   }) {
     return loading();
@@ -260,7 +286,9 @@ class _$LoadingImpl<T> implements Loading<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function()? sending,
+    TResult? Function()? typing,
+    TResult? Function(T data)? send,
     TResult? Function(String error)? error,
   }) {
     return loading?.call();
@@ -271,7 +299,9 @@ class _$LoadingImpl<T> implements Loading<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function()? sending,
+    TResult Function()? typing,
+    TResult Function(T data)? send,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -286,7 +316,9 @@ class _$LoadingImpl<T> implements Loading<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(Loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
+    required TResult Function(Sending<T> value) sending,
+    required TResult Function(Typing<T> value) typing,
+    required TResult Function(Send<T> value) send,
     required TResult Function(Error<T> value) error,
   }) {
     return loading(this);
@@ -297,7 +329,9 @@ class _$LoadingImpl<T> implements Loading<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
+    TResult? Function(Sending<T> value)? sending,
+    TResult? Function(Typing<T> value)? typing,
+    TResult? Function(Send<T> value)? send,
     TResult? Function(Error<T> value)? error,
   }) {
     return loading?.call(this);
@@ -308,7 +342,9 @@ class _$LoadingImpl<T> implements Loading<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
     TResult Function(Loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
+    TResult Function(Sending<T> value)? sending,
+    TResult Function(Typing<T> value)? typing,
+    TResult Function(Send<T> value)? send,
     TResult Function(Error<T> value)? error,
     required TResult orElse(),
   }) {
@@ -324,20 +360,278 @@ abstract class Loading<T> implements ChatState<T> {
 }
 
 /// @nodoc
-abstract class _$$SuccessImplCopyWith<T, $Res> {
-  factory _$$SuccessImplCopyWith(
-          _$SuccessImpl<T> value, $Res Function(_$SuccessImpl<T>) then) =
-      __$$SuccessImplCopyWithImpl<T, $Res>;
+abstract class _$$SendingImplCopyWith<T, $Res> {
+  factory _$$SendingImplCopyWith(
+          _$SendingImpl<T> value, $Res Function(_$SendingImpl<T>) then) =
+      __$$SendingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$SendingImplCopyWithImpl<T, $Res>
+    extends _$ChatStateCopyWithImpl<T, $Res, _$SendingImpl<T>>
+    implements _$$SendingImplCopyWith<T, $Res> {
+  __$$SendingImplCopyWithImpl(
+      _$SendingImpl<T> _value, $Res Function(_$SendingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ChatState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$SendingImpl<T> implements Sending<T> {
+  const _$SendingImpl();
+
+  @override
+  String toString() {
+    return 'ChatState<$T>.sending()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SendingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() sending,
+    required TResult Function() typing,
+    required TResult Function(T data) send,
+    required TResult Function(String error) error,
+  }) {
+    return sending();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? sending,
+    TResult? Function()? typing,
+    TResult? Function(T data)? send,
+    TResult? Function(String error)? error,
+  }) {
+    return sending?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? sending,
+    TResult Function()? typing,
+    TResult Function(T data)? send,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (sending != null) {
+      return sending();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Sending<T> value) sending,
+    required TResult Function(Typing<T> value) typing,
+    required TResult Function(Send<T> value) send,
+    required TResult Function(Error<T> value) error,
+  }) {
+    return sending(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Sending<T> value)? sending,
+    TResult? Function(Typing<T> value)? typing,
+    TResult? Function(Send<T> value)? send,
+    TResult? Function(Error<T> value)? error,
+  }) {
+    return sending?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Sending<T> value)? sending,
+    TResult Function(Typing<T> value)? typing,
+    TResult Function(Send<T> value)? send,
+    TResult Function(Error<T> value)? error,
+    required TResult orElse(),
+  }) {
+    if (sending != null) {
+      return sending(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Sending<T> implements ChatState<T> {
+  const factory Sending() = _$SendingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$TypingImplCopyWith<T, $Res> {
+  factory _$$TypingImplCopyWith(
+          _$TypingImpl<T> value, $Res Function(_$TypingImpl<T>) then) =
+      __$$TypingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$TypingImplCopyWithImpl<T, $Res>
+    extends _$ChatStateCopyWithImpl<T, $Res, _$TypingImpl<T>>
+    implements _$$TypingImplCopyWith<T, $Res> {
+  __$$TypingImplCopyWithImpl(
+      _$TypingImpl<T> _value, $Res Function(_$TypingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ChatState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$TypingImpl<T> implements Typing<T> {
+  const _$TypingImpl();
+
+  @override
+  String toString() {
+    return 'ChatState<$T>.typing()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$TypingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() sending,
+    required TResult Function() typing,
+    required TResult Function(T data) send,
+    required TResult Function(String error) error,
+  }) {
+    return typing();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? sending,
+    TResult? Function()? typing,
+    TResult? Function(T data)? send,
+    TResult? Function(String error)? error,
+  }) {
+    return typing?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? sending,
+    TResult Function()? typing,
+    TResult Function(T data)? send,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (typing != null) {
+      return typing();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Sending<T> value) sending,
+    required TResult Function(Typing<T> value) typing,
+    required TResult Function(Send<T> value) send,
+    required TResult Function(Error<T> value) error,
+  }) {
+    return typing(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Sending<T> value)? sending,
+    TResult? Function(Typing<T> value)? typing,
+    TResult? Function(Send<T> value)? send,
+    TResult? Function(Error<T> value)? error,
+  }) {
+    return typing?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Sending<T> value)? sending,
+    TResult Function(Typing<T> value)? typing,
+    TResult Function(Send<T> value)? send,
+    TResult Function(Error<T> value)? error,
+    required TResult orElse(),
+  }) {
+    if (typing != null) {
+      return typing(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Typing<T> implements ChatState<T> {
+  const factory Typing() = _$TypingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$SendImplCopyWith<T, $Res> {
+  factory _$$SendImplCopyWith(
+          _$SendImpl<T> value, $Res Function(_$SendImpl<T>) then) =
+      __$$SendImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({T data});
 }
 
 /// @nodoc
-class __$$SuccessImplCopyWithImpl<T, $Res>
-    extends _$ChatStateCopyWithImpl<T, $Res, _$SuccessImpl<T>>
-    implements _$$SuccessImplCopyWith<T, $Res> {
-  __$$SuccessImplCopyWithImpl(
-      _$SuccessImpl<T> _value, $Res Function(_$SuccessImpl<T>) _then)
+class __$$SendImplCopyWithImpl<T, $Res>
+    extends _$ChatStateCopyWithImpl<T, $Res, _$SendImpl<T>>
+    implements _$$SendImplCopyWith<T, $Res> {
+  __$$SendImplCopyWithImpl(
+      _$SendImpl<T> _value, $Res Function(_$SendImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of ChatState
@@ -347,7 +641,7 @@ class __$$SuccessImplCopyWithImpl<T, $Res>
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$SuccessImpl<T>(
+    return _then(_$SendImpl<T>(
       freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -358,22 +652,22 @@ class __$$SuccessImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$SuccessImpl<T> implements Success<T> {
-  const _$SuccessImpl(this.data);
+class _$SendImpl<T> implements Send<T> {
+  const _$SendImpl(this.data);
 
   @override
   final T data;
 
   @override
   String toString() {
-    return 'ChatState<$T>.success(data: $data)';
+    return 'ChatState<$T>.send(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SuccessImpl<T> &&
+            other is _$SendImpl<T> &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -386,18 +680,20 @@ class _$SuccessImpl<T> implements Success<T> {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SuccessImplCopyWith<T, _$SuccessImpl<T>> get copyWith =>
-      __$$SuccessImplCopyWithImpl<T, _$SuccessImpl<T>>(this, _$identity);
+  _$$SendImplCopyWith<T, _$SendImpl<T>> get copyWith =>
+      __$$SendImplCopyWithImpl<T, _$SendImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function() sending,
+    required TResult Function() typing,
+    required TResult Function(T data) send,
     required TResult Function(String error) error,
   }) {
-    return success(data);
+    return send(data);
   }
 
   @override
@@ -405,10 +701,12 @@ class _$SuccessImpl<T> implements Success<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function()? sending,
+    TResult? Function()? typing,
+    TResult? Function(T data)? send,
     TResult? Function(String error)? error,
   }) {
-    return success?.call(data);
+    return send?.call(data);
   }
 
   @override
@@ -416,12 +714,14 @@ class _$SuccessImpl<T> implements Success<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function()? sending,
+    TResult Function()? typing,
+    TResult Function(T data)? send,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(data);
+    if (send != null) {
+      return send(data);
     }
     return orElse();
   }
@@ -431,10 +731,12 @@ class _$SuccessImpl<T> implements Success<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(Loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
+    required TResult Function(Sending<T> value) sending,
+    required TResult Function(Typing<T> value) typing,
+    required TResult Function(Send<T> value) send,
     required TResult Function(Error<T> value) error,
   }) {
-    return success(this);
+    return send(this);
   }
 
   @override
@@ -442,10 +744,12 @@ class _$SuccessImpl<T> implements Success<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
+    TResult? Function(Sending<T> value)? sending,
+    TResult? Function(Typing<T> value)? typing,
+    TResult? Function(Send<T> value)? send,
     TResult? Function(Error<T> value)? error,
   }) {
-    return success?.call(this);
+    return send?.call(this);
   }
 
   @override
@@ -453,26 +757,28 @@ class _$SuccessImpl<T> implements Success<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
     TResult Function(Loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
+    TResult Function(Sending<T> value)? sending,
+    TResult Function(Typing<T> value)? typing,
+    TResult Function(Send<T> value)? send,
     TResult Function(Error<T> value)? error,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(this);
+    if (send != null) {
+      return send(this);
     }
     return orElse();
   }
 }
 
-abstract class Success<T> implements ChatState<T> {
-  const factory Success(final T data) = _$SuccessImpl<T>;
+abstract class Send<T> implements ChatState<T> {
+  const factory Send(final T data) = _$SendImpl<T>;
 
   T get data;
 
   /// Create a copy of ChatState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SuccessImplCopyWith<T, _$SuccessImpl<T>> get copyWith =>
+  _$$SendImplCopyWith<T, _$SendImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -546,7 +852,9 @@ class _$ErrorImpl<T> implements Error<T> {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(T data) success,
+    required TResult Function() sending,
+    required TResult Function() typing,
+    required TResult Function(T data) send,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -557,7 +865,9 @@ class _$ErrorImpl<T> implements Error<T> {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(T data)? success,
+    TResult? Function()? sending,
+    TResult? Function()? typing,
+    TResult? Function(T data)? send,
     TResult? Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -568,7 +878,9 @@ class _$ErrorImpl<T> implements Error<T> {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(T data)? success,
+    TResult Function()? sending,
+    TResult Function()? typing,
+    TResult Function(T data)? send,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -583,7 +895,9 @@ class _$ErrorImpl<T> implements Error<T> {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial<T> value) initial,
     required TResult Function(Loading<T> value) loading,
-    required TResult Function(Success<T> value) success,
+    required TResult Function(Sending<T> value) sending,
+    required TResult Function(Typing<T> value) typing,
+    required TResult Function(Send<T> value) send,
     required TResult Function(Error<T> value) error,
   }) {
     return error(this);
@@ -594,7 +908,9 @@ class _$ErrorImpl<T> implements Error<T> {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial<T> value)? initial,
     TResult? Function(Loading<T> value)? loading,
-    TResult? Function(Success<T> value)? success,
+    TResult? Function(Sending<T> value)? sending,
+    TResult? Function(Typing<T> value)? typing,
+    TResult? Function(Send<T> value)? send,
     TResult? Function(Error<T> value)? error,
   }) {
     return error?.call(this);
@@ -605,7 +921,9 @@ class _$ErrorImpl<T> implements Error<T> {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial<T> value)? initial,
     TResult Function(Loading<T> value)? loading,
-    TResult Function(Success<T> value)? success,
+    TResult Function(Sending<T> value)? sending,
+    TResult Function(Typing<T> value)? typing,
+    TResult Function(Send<T> value)? send,
     TResult Function(Error<T> value)? error,
     required TResult orElse(),
   }) {
